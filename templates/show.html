@@ -1,0 +1,24 @@
+<head>
+    <title>HomePage Listing Pets</title>
+</head>
+
+<body>
+<h1>List of Pets</h1>
+<ul>
+{% for pet in pets %}
+<li>
+    {{ pet.name }}
+    {% if pet.photo_url %}
+    <img src= {{ pet.photo_url }}>
+    {% endif %}
+    {% if pet.available %}
+    <strong>Available for Adoption</strong>
+    {% else %}
+    Not Available
+    {% endif %}
+</li>
+{% endfor %}
+
+</ul>
+
+</body>

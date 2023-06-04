@@ -1,0 +1,42 @@
+<head>
+    <title>Pet Details</title>
+</head>
+
+<body>
+<h1>Pet Details</h1>
+
+<h2> {{ pet.name }}</h2>
+<p> Species: {{pet.species}}</p>
+
+{% if pet.photo_url %}
+<img src="{{ pet.photo_url }}">
+{% endif %}
+
+{% if pet.age %}
+<p> Age: {{ pet.age }} </p>
+{% endif %}
+
+<form method="POST" action="/pets/{{pet.id}}/edit">
+ {{ form.hidden.tag() }}
+
+ <div>
+
+{{ form.photo_url.label }} {{ form.photo.url }}
+ </div>
+
+<div>
+    {{ form.notes.label }} {{ form.notes() }}
+</div>
+
+<div>
+    {{ form.available.label }} {{form.available() }}
+</div>
+
+<input type="submit" value="Update Pet"
+
+</form>
+
+
+
+
+</body>
